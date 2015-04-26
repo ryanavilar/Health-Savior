@@ -1,0 +1,10 @@
+.move{
+	float:none;
+}
+
+.full{
+	height: 100vh;
+	padding-top: 25vh;
+	padding-bottom: 25vh;
+	margin-bottom: 0;
+}
