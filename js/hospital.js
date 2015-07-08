@@ -1,6 +1,6 @@
 var app = angular.module('clinic', ['app-directives']);
 var map;
-var infowindow;
+var infowindow2;
 
 app.controller('clinicController',function($scope){
 	var mapOptions = {
@@ -30,14 +30,18 @@ app.controller('clinicController',function($scope){
   			radius: 1000,
   			types: ['hospital']
   		};
-  		infowindow = new google.maps.InfoWindow();
+  		infowindow2 = new google.maps.InfoWindow();
   		var service = new google.maps.places.PlacesService(map);
-  		service.nearbySearch(request, function(results,status){
+      
+      service.nearbySearch(request, function(results,status){
   			if (status == google.maps.places.PlacesServiceStatus.OK) {
   				$scope.$apply(function(){
+
   					$scope.locations = results;
+            console.log($scope.locations);
+
   				});
-  				console.log($scope.locations);
+  				
   				for (var i = 0; i < results.length; i++) {
   					console.log(results[i]);
   					createMarker(results[i]);
@@ -79,8 +83,9 @@ function createMarker(place) {
   });
 
   google.maps.event.addListener(marker, 'click', function() {
-    infowindow.setContent(place.name);
-    infowindow.open(map, this);
+    infowindow2.setContent(place.name);
+    infowindow2.open(map, this);
   });
 }
+
 
