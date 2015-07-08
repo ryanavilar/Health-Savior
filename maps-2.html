@@ -1,18 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="hospital  ">
 <head>
   <title>Hospital Around You</title>
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
   <meta charset="utf-8">
+  <head-include></head-include>
   <style>
-    html, body, #map-canvas {
+    html, body{
       height: 100%;
       margin: 0px;
       padding: 0px
     }
+
+    #map-canvas{
+      width: 80%;
+      height: 100%;
+    }
   </style>
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v3&libraries=places,geometry&signed_in=true&key=AIzaSyC1l2r4IVzWnWXxZVd4R6SSifCAj3vCsrk"></script>
+    <!-- Javascript Collection-->
+  <script src="js/jquery-1.11.2.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/angular.min.js"></script>
+  <script type="text/javascript" src="ngjs/app.js"></script>
+  <script type="text/javascript" src="ngjs/directive.js"></script>
   <script>
+
+
 // Note: This example requires that you consent to location sharing when
 // prompted by your browser. If you see a blank space instead of the map, this
 // is probably because you have denied permission for location sharing.
@@ -108,7 +122,10 @@ google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 </head>
 <body>
-  <div id="map-canvas"></div>
+  <div class="col-md-2"><h1>Test</h1></div>
+  <div class="col-md-9" id="map-canvas"></div>
   <img src="images/powered-by-google-on-white.png">
+
+
 </body>
 </html>

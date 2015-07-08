@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="clinic">
+<head>
+	<head-include> </head-include>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	<meta charset="utf-8">
+	<title>Hospital Around You</title>
+	<link rel="stylesheet" type="text/css" href="css/hospital.css">
+	<style>
+		html, body,  #map-canvas {
+			height: 100%;
+			margin: 0px;
+			padding: 0px
+		}
+
+	</style>
+
+	<!-- Javascript Collection-->
+	<script src="js/jquery-1.11.2.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="ngjs/app.js"></script>
+	<script type="text/javascript" src="ngjs/directive.js"></script>
+
+	 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v3&libraries=places,geometry&signed_in=true&key=AIzaSyC1l2r4IVzWnWXxZVd4R6SSifCAj3vCsrk"></script>
+	<script type="text/javascript" src="js/hospital.js"></script>
+
+</head>
+<body>
+
+	<div ng-controller="clinicController" class="col-md-3 col-sm-3 col-xs-3" >
+		<div class="bord" ng-repeat="loc in locations">
+			<h4 class="hidden-xs">{{ loc.name }}</h4><h5 class="visible-xs">{{ loc.name }}</h5>
+			<hr>
+			<p> description </p>	
+		</div>
+
+	</div>
+	<div class="col-md-9 col-sm-9 col-xs-9" id="map-canvas"></div>
+	
+</body>
+</html>
